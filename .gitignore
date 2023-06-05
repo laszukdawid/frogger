@@ -1,0 +1,16 @@
+*.pyc
+__pycache__/
+
+.venv/
+.direnv
+.envrc
+
+*.egg-info/
+dist/
+build/
+
+*.mp3
+*.wav
+
+.cache/
+.vscode/

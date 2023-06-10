@@ -31,11 +31,21 @@ dev = ["black==23.1.*", "isort==5.12.*", "ruff"]
 build = ["setuptools>=61", "build", "twine"]
 test = ["pytest"]
 
+[tool.setuptools]
+include-package-data = true
+
 [tool.setuptools.dynamic]
 version = {attr = "frogger.__version__"}
 
 [tool.setuptools.packages.find]
 include = ["frogger*"]
+
+[tool.setuptools.package-data]
+frogger = ["*.json"]
+
+# Entrypoint for CLI
+[project.scripts]
+frogger = "frogger.cli:main"
 
 [tool.black]
 line-length = 120

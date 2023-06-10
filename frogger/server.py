@@ -61,7 +61,7 @@ def create_argparser():
 # args = create_argparser().parse_args()
 
 # path = Path(__file__).parent / "../.models.json"
-path = Path(__file__).parent / ".models.json"
+path = Path(__file__).parent / "models.json"
 manager = ModelManager(models_file=path)
 
 # if args.list_models:
@@ -154,7 +154,7 @@ async def tts_local(text: str | None = None, voice: str = "p243", language_idx: 
     out = tempfile.NamedTemporaryFile(suffix=".wav", delete=False)
     print(f" > Saving output to {out.name}")
     synthesizer.save_wav(wavs, out)
-    return out.name
+    return {"filename": out.name}
 
 
 @app.get("/models", response_model=list[str])

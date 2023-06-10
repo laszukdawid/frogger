@@ -107,8 +107,10 @@ def import_class(module_path: str) -> object:
     Returns:
         object: The imported class.
     """
-    class_name = module_path.split(".")[-1]
-    module_path = ".".join(module_path.split(".")[:-1])
+    module_path, class_name = module_path.rsplit(".", 1)
+    # Replace paths starting with TTS by frogger - needed from grandparent
+    if module_path.startswith("TTS"):
+        module_path = "frogger" + module_path[3:]
     module = importlib.import_module(module_path)
     return getattr(module, class_name)
 

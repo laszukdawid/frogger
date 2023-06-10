@@ -112,7 +112,7 @@ class TTS:
 
     @staticmethod
     def get_models_file_path():
-        return Path(__file__).parent / ".models.json"
+        return Path(__file__).parent / "models.json"
 
     @staticmethod
     def list_models():

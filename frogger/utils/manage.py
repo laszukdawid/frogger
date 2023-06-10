@@ -51,7 +51,7 @@ class ModelManager(object):
             self.read_models_file(models_file)
         else:
             # try the default location
-            path = Path(__file__).parent / "../.models.json"
+            path = Path(__file__).parent / "../models.json"
             self.read_models_file(path)
 
     def read_models_file(self, file_path):

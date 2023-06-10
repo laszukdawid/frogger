@@ -299,7 +299,7 @@ If you don't specify any models, then it uses LJSpeech based English model.
         parser.parse_args(["-h"])
 
     # load model manager
-    path = Path(__file__).parent / "../.models.json"
+    path = Path(__file__).parent / "../models.json"
     manager = ModelManager(path, progress_bar=args.progress_bar)
     api = TTS()
 

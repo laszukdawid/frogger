@@ -45,7 +45,8 @@ def register_config(model_name: str):
         try:
             config_class = find_module(path, config_name)
         except ModuleNotFoundError:
-            logging.exception(f"Cannot import {config_name} from '{path}'")
+            # logging.exception(f"Cannot import {config_name} from '{path}'")
+            pass
     if config_class is None:
         raise ModuleNotFoundError(f" [!] Config for {model_name} cannot be found.")
     return config_class
